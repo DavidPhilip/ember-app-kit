@@ -1,0 +1,26 @@
+{
+  "name": "ember-app-kit",
+  "dependencies": {
+    "handlebars": "~1.1.2",
+    "jquery": "~1.9.1",
+    "qunit": "~1.12.0",
+    "ember": "~1.4.0-beta.2",
+    "ember-data": "~1.0.0-beta.6",
+    "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
+    "ic-ajax": "~0.3.0",
+    "ember-testing-httpRespond": "~0.1.1"
+  },
+  "resolutions": {
+    "ember": "~1.4.0-beta.2"
+  },
+  "homepage": "https://github.com/DavidPhilip/ember-app-kit",
+  "_release": "4d8ca0de93",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4d8ca0de93b66f0be1975cc2d96b4d599d782b35"
+  },
+  "_source": "git://github.com/DavidPhilip/ember-app-kit.git",
+  "_target": "*",
+  "_originalSource": "DavidPhilip/ember-app-kit"
+}
