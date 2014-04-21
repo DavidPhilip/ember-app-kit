@@ -1,0 +1,85 @@
+noscript
+  p
+    #{ t 'general.nojs' }
+    
+#navigation
+  .navbar.navbar-default.col-md-10.col-md-offset-1 role='navigation'
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle type='button' data-toggle='collapse' data-target='.navbar-collapse'
+          span.sr-only #{ t 'general.sr_texts.nav_toggle' }
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        link-to 'home' classNames='navbar-brand' | 'Agilitybase.com'
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav.navbar-right
+          link-to 'tournaments' tagName='li' href=false
+            a href='#' #{ t 'routes.tournaments' }
+          li
+            a click='scrollTo "features"' #{ t 'home.navigation.features' }
+          li
+            a click='scrollTo "timekeeping"' #{ t 'home.navigation.timekeeping' }
+          li.separator
+          li
+            a click='showModal "loginModal"' #{ t 'general.login.login' }
+          li
+            a click='showModal "registerModal"' #{ t 'routes.register' }
+            
+#content.col-md-12   
+  .jumbotron.jumbodog
+    .col-md-10.col-md-offset-1
+      #description
+        h1 #{ t 'home.description' }
+        a.btn.btn-default.primary.btn-vlg.btn-register click='showModal "registerModal"' #{ t 'routes.register' }
+        a.btn.btn-default.outlined.btn-vlg.btn-login click='showModal "loginModal"' #{ t 'general.login.login' }
+      
+      a.learn-more click='scrollTo "features"' title=learnMoreTitle
+        t 'home.learn_more'
+        i.fa.fa-chevron-down
+        
+  #features.jumbotron.carousel.slide
+    .col-md-12
+      h2 
+        t 'home.features.title'
+        span.btn-group data-toggle="buttons"
+          label.btn.btn-default.outlined.btn-lg.active data-slide-to="0" data-target="#features"
+            input type='radio' name='features' #{ t 'home.features.athletes' }
+          label.btn.btn-default.outlined.btn-lg data-slide-to="1" data-target="#features"
+            input type='radio' name='features' #{ t 'home.features.clubs' }
+    
+    .carousel-inner
+      .item.row.features.athletes.active
+        .col-md-12.main_goal
+          p #{ t 'home.features.athletes_highlights_copy' }
+        .feature.col-md-4.feature_1
+          i.fa.fa-3x.fa-group
+          h3 #{ t 'home.features.feature_1' }
+          p #{ t 'home.features.feature_1_copy' }
+        .feature.col-md-4.feature_2
+          i.fa.fa-3x.fa-thumbs-up
+          h3 #{ t 'home.features.feature_2' }
+          p #{ t 'home.features.feature_2_copy' }
+        .feature.col-md-4.feature_3
+          i.fa.fa-3x.fa-bell
+          h3 #{ t 'home.features.feature_3' }
+          p #{ t 'home.features.feature_3_copy' }
+      
+      .item.row.features.clubs
+        .col-md-12.main_goal
+          p #{ t 'home.features.clubs_highlights_copy' }
+        .feature.col-md-4.feature_4
+          i.fa.fa-3x.fa-envelope
+          h3 #{ t 'home.features.feature_4' }
+          p #{ t 'home.features.feature_4_copy' }
+        .feature.col-md-4.feature_5
+          i.fa.fa-3x.fa-plane
+          h3 #{ t 'home.features.feature_5' }
+          p #{ t 'home.features.feature_5_copy' }
+        .feature.col-md-4.feature_6
+          i.fa.fa-3x.fa-exchange
+          h3 #{ t 'home.features.feature_6' }
+          p #{ t 'home.features.feature_6_copy' }
+      
+  render 'login'
+  render 'register'

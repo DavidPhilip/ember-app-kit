@@ -1,4 +1,0 @@
-if session.isAuthenticated
-  a click='invalidateSession' Logout
-else
-  link-to 'login' | Login

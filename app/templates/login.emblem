@@ -1,9 +1,29 @@
-bs-modal name="loginModal" title="Login" manual="true"
-  form submit='authenticate'
-    label for='identification' Login
-    = input id='identification' placeholder='Enter Login' value=identification
+ab-modal name="loginModal" title=loginModalTitle manual=isManual id="login_modal" classNames="ab modal slick fade"
+  form#login_form submit='authenticate'
+    .alert.alert-danger.hide
     
-    label for='password' Password
-    = input id='password' placeholder='Enter Password' type='password' value=password
+    .form-group.username
+      a#username_link_popover_help class='fa fa-question-circle fa-lg' click='showModal "usernameHelpModal"'
+      
+      label.control-label for='username' #{t 'general.login.username'}
+      = input class='form-control' id='username' placeholder='HHUBER1307' value=identification
+      
+    .form-group.password
+      link-to '' classNames='fa fa-question-circle fa-lg' id="password_link_popover_help"
+      
+      label.control-label for='password' #{t 'general.login.password'}
+      = input type='password' class='form-control' id='password' value=password
     
-    button type="submit" Login
+    button.btn.btn-default.primary.btn-block.submit type="submit"
+      i.fa.fa-cog.fa-spin.hide
+      = t 'general.login.login'
+      
+  .help
+    h4 #{ t 'general.help.title' }
+    link-to '' | #{ t 'general.login.forgot_password' }
+    / link-to 'forgot_password' | #{ t 'general.login.forgot_password' }
+    br
+    a#username_link_popover_help click='showModal "usernameHelpModal"' #{ t 'general.login.what_is_my_username' }
+
+ab-modal name="usernameHelpModal" title=usernameHelpModalTitle id="username_help_modal" classNames="ab modal fade"
+  = t 'general.help.login.username.content'

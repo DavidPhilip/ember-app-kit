@@ -1,0 +1,48 @@
+ab-modal name="registerModal" title=registerModalTitle manual=isManual id="register_modal" classNames="ab modal fat fade"
+  form#register_form submit='register'
+    .alert.alert-danger.hide
+    
+    .row
+      .col-sm-6
+      
+        .form-group.firstname
+          label.control-label for='firstname' #{t 'general.register.firstname'}
+          input.form-control#firstname value=firstname
+        
+        .form-group.lastname
+          label.control-label for='lastname' #{t 'general.register.lastname'}
+          input.form-control#lastname value=lastname
+          
+        .form-group.birthday
+          label.control-label for='birthday' #{t 'general.register.birthday'}
+          input.form-control#birthday value=birthday
+        
+      .col-sm-6
+      
+        .form-group.email
+          label.control-label for='email' #{t 'general.register.email'}
+          input.form-control#email value=email
+        
+        .form-group.email_confirmation
+          label.control-label for='email_confirmation' #{t 'general.register.email_confirmation'}
+          input.form-control#email_confirmation value=email_confirmation
+          
+        .form-group.password
+          label.control-label for='password' #{t 'general.register.password'}
+          input.form-control#password type='password' value=password
+          
+        .form-group.password_confirmation
+          label.control-label for='password_confirmation' #{t 'general.register.password_confirmation'}
+          input.form-control#password_confirmation type='password' value=password_confirmation
+          
+        .form-group.terms
+          p
+            input#terms type='checkbox' value=accepted_terms
+            label.control-label click='showModal "termsModal"' #{ t 'general.register.terms_html' action-id='22' }
+      
+    button.btn.btn-default.primary.btn-block.submit type='submit'
+      i.fa.fa-cog.fa-spin.hide
+      = t 'general.register.register'
+
+ab-modal name="termsModal" title=termsModalTitle id="terms_modal" classNames="ab modal fade"
+  = t 'general.terms.content'
