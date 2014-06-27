@@ -1,6 +1,6 @@
 noscript
   p
-    #{ t 'general.nojs' }
+    t 'general.nojs'
     
 #navigation
   .navbar.navbar-default.col-md-10.col-md-offset-1 role='navigation'
@@ -42,10 +42,11 @@ noscript
     .col-md-12
       h2 
         t 'home.features.title'
+        br
         span.btn-group data-toggle="buttons"
-          label.btn.btn-default.outlined.btn-lg.active data-slide-to="0" data-target="#features"
+          label.btn.btn-default.outlined.light.btn-lg.active data-slide-to="0" data-target="#features"
             input type='radio' name='features' #{ t 'home.features.athletes' }
-          label.btn.btn-default.outlined.btn-lg data-slide-to="1" data-target="#features"
+          label.btn.btn-default.outlined.light.btn-lg data-slide-to="1" data-target="#features"
             input type='radio' name='features' #{ t 'home.features.clubs' }
     
     .carousel-inner

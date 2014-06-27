@@ -1,43 +1,43 @@
 ab-modal name="registerModal" title=registerModalTitle manual=isManual id="register_modal" classNames="ab modal fat fade"
   form#register_form submit='register'
-    .alert.alert-danger.hide
+    = partial 'forms/errors'
     
     .row
       .col-sm-6
       
-        .form-group.firstname
+        div class={ :form-group :firstname showFirstnameError:has-error }
           label.control-label for='firstname' #{t 'general.register.firstname'}
-          input.form-control#firstname value=firstname
+          = input class='form-control' id='firstname' name="firstname" value=firstname
         
-        .form-group.lastname
+        div class={ :form-group :lastname showLastnameError:has-error }
           label.control-label for='lastname' #{t 'general.register.lastname'}
-          input.form-control#lastname value=lastname
+          = input class='form-control' id='lastname' name="lastname" value=lastname
           
-        .form-group.birthday
+        div class={ :form-group :birthday showBirthdayError:has-error }
           label.control-label for='birthday' #{t 'general.register.birthday'}
-          input.form-control#birthday value=birthday
+          = input class='form-control' id='birthday' name="birthday" value=birthday
         
       .col-sm-6
       
-        .form-group.email
+        div class={ :form-group :email showEmailError:has-error }
           label.control-label for='email' #{t 'general.register.email'}
-          input.form-control#email value=email
+          = input class='form-control' id='email' value=email
         
-        .form-group.email_confirmation
+        div class={ :form-group :email_confirmation showEmailUnconfirmedError:has-error }
           label.control-label for='email_confirmation' #{t 'general.register.email_confirmation'}
-          input.form-control#email_confirmation value=email_confirmation
+          = input class='form-control' id='email_confirmation' value=emailConfirmation
           
-        .form-group.password
-          label.control-label for='password' #{t 'general.register.password'}
-          input.form-control#password type='password' value=password
+        div class={ :form-group :password showRegisterPasswordError:has-error }
+          label.control-label for='registerPassword' #{t 'general.register.password'}
+          = input class='form-control' id='registerPassword' value=registerPassword type='password'
           
-        .form-group.password_confirmation
+        div class={ :form-group :password_confirmation showPasswordUnconfirmedError:has-error }
           label.control-label for='password_confirmation' #{t 'general.register.password_confirmation'}
-          input.form-control#password_confirmation type='password' value=password_confirmation
+          = input class='form-control' id='password_confirmation' type='password' value=registerPasswordConfirmation
           
-        .form-group.terms
+        div class={ :form-group :terms showTermsError:has-error }
           p
-            input#terms type='checkbox' value=accepted_terms
+            = input id='terms' type='checkbox' checked=terms
             label.control-label click='showModal "termsModal"' #{ t 'general.register.terms_html' action-id='22' }
       
     button.btn.btn-default.primary.btn-block.submit type='submit'

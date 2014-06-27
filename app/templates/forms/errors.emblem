@@ -1,0 +1,10 @@
+div class={ displayAsyncErrors::hide }
+  div class={ :alert :alert-danger }
+    ul
+      each error in errorMessages
+        li = error
+div class={ displayErrors::hide }
+  div class={ :alert :alert-danger isValid:hide }
+    ul
+      each error in translatedErrors
+        li = error

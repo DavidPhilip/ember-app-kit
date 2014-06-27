@@ -12,6 +12,7 @@
     "emblem.js": "~0.3.11",
     "ember-i18n": "1.6.3",
     "ember-addons.bs_for_ember": "~0.6.1",
-    "ember-simple-auth": "https://github.com/simplabs/ember-simple-auth-component.git"
+    "ember-simple-auth": "https://github.com/simplabs/ember-simple-auth-component.git",
+    "ember-validations": "http://builds.dockyard.com.s3.amazonaws.com/ember-validations/latest/ember-validations.js"
   }
 }

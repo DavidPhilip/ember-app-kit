@@ -1,14 +1,14 @@
 ab-modal name="loginModal" title=loginModalTitle manual=isManual id="login_modal" classNames="ab modal slick fade"
   form#login_form submit='authenticate'
-    .alert.alert-danger.hide
+    = partial 'forms/errors'
     
-    .form-group.username
+    div class={ :form-group :username showIdentificationError:has-error }
       a#username_link_popover_help class='fa fa-question-circle fa-lg' click='showModal "usernameHelpModal"'
       
       label.control-label for='username' #{t 'general.login.username'}
       = input class='form-control' id='username' placeholder='HHUBER1307' value=identification
       
-    .form-group.password
+    div class={ :form-group :password showPasswordError:has-error }
       link-to '' classNames='fa fa-question-circle fa-lg' id="password_link_popover_help"
       
       label.control-label for='password' #{t 'general.login.password'}
